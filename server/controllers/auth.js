@@ -76,7 +76,8 @@ auth.post(`/login`, async (req, res) => {
 
     const token = _jsonwebtoken.default.sign({
       _id: user._id,
-      username: user.username
+      username: user.username,
+      admin: user.admin
     }, process.env.SECRET, {
       expiresIn: `60 days`
     });

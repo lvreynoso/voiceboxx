@@ -12,7 +12,7 @@ var _assert = _interopRequireDefault(require("assert"));
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 // Mongoose connection
-const uri = process.env.MONGODB_URI || 'mongodb://localhost/pollution-api';
+const uri = process.env.MONGODB_URI || 'mongodb://localhost/voicebox';
 _mongoose.default.Promise = global.Promise;
 
 _mongoose.default.connect(uri, {
