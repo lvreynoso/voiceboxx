@@ -3,7 +3,7 @@
 import mongoose from 'mongoose'
 import assert from 'assert'
 
-const uri = process.env.MONGODB_URI || 'mongodb://localhost/pollution-api'
+const uri = process.env.MONGODB_URI || 'mongodb://localhost/voicebox'
 mongoose.Promise = global.Promise;
 mongoose.connect(
     uri,

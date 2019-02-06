@@ -49,7 +49,7 @@ auth.post(`/login`, async (req, res) => {
             return res.status(401).send({ message: `Wrong username or password` });
         }
         // create a token
-        const token = jwt.sign({ _id: user._id, username: user.username }, process.env.SECRET, {
+        const token = jwt.sign({ _id: user._id, username: user.username, admin: user.admin }, process.env.SECRET, {
             expiresIn: `60 days`
         });
         res.cookie(`nToken`, token, { maxAge: 900000, httpOnly: true });
