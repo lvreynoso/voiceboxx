@@ -1,0 +1,46 @@
+{
+  "name": "mimikov",
+  "version": "1.0.0",
+  "description": "A Node.js-based web app to generate MIDI music using markov chains",
+  "main": "server.js",
+  "scripts": {
+    "test": "mocha --require @babel/polyfill --require @babel/register --exit",
+    "clean": "rm -rf server && mkdir server",
+    "build-server": "babel -d ./server ./source -s",
+    "build": "npm run clean && npm run build-server",
+    "start": "node ./server/server.js",
+    "dev": "nodemon --exec babel-node -- ./source/server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lvreynoso/mimikov.git"
+  },
+  "author": "Lucia Reynoso",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/lvreynoso/mimikov/issues"
+  },
+  "homepage": "https://github.com/lvreynoso/mimikov#readme",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.18.3",
+    "cookie-parser": "^1.4.3",
+    "dotenv": "^6.1.0",
+    "express": "^4.16.4",
+    "express-handlebars": "^3.0.0",
+    "express-validator": "^5.3.0",
+    "jsonwebtoken": "^8.4.0",
+    "mongoose": "^5.3.14"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.2.0",
+    "@babel/core": "^7.2.0",
+    "@babel/node": "^7.2.0",
+    "@babel/polyfill": "^7.0.0",
+    "@babel/preset-env": "^7.2.0",
+    "@babel/register": "^7.0.0",
+    "chai": "^4.2.0",
+    "chai-http": "^4.2.0",
+    "mocha": "^5.2.0"
+  }
+}
