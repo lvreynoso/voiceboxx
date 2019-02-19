@@ -1,14 +1,26 @@
 html,
 body {
-    height: 100%;
-    background-color: #6bffde
+  height: 100%;
+  background-image: linear-gradient(to bottom right, #33ccff, #9400D3);  
 }
 
+.logo{
+  font-family: 'Coiny', cursive;
+  color: #000;
+  font-size: 100px;
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: rgb(100, 101, 101);
+  text-shadow:
+   -1px -1px 0 #000,  
+    1px -1px 0 #000,
+    -1px 1px 0 #000,
+     1px 1px 0 #000;
+}
 .container {
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 /* Style The Dropdown Button */
