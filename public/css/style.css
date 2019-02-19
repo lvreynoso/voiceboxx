@@ -11,10 +11,11 @@ body {
   -webkit-text-stroke-width: 1px;
   -webkit-text-stroke-color: rgb(100, 101, 101);
   text-shadow:
-   -1px -1px 0 #000,  
+    3px 3px 0 #000,
+    -1px -1px 0 #000,  
     1px -1px 0 #000,
     -1px 1px 0 #000,
-     1px 1px 0 #000;
+    1px 1px 0 #000;
 }
 .container {
   height: 100%;
