@@ -1,8 +1,9 @@
 # voicebox backend
 
 ## About
-A Node.js-based web app to sing Karaoke to.
+A Node.js-based web app.  
 This is a student project written for Make School.
+For the live version, click [here](http://voiceboxx.herokuapp.com)
 ## Installing
 * Clone project and run the command `npm install`.
 ## Developing
