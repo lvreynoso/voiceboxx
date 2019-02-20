@@ -5,7 +5,6 @@ const index = express.Router()
 
 index.get('/', (req, res) => {
     const currentUser = req.user;
-    console.log(req.cookies);
     res.render('index', { currentUser })
 })
 

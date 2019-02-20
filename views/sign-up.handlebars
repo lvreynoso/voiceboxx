@@ -1,0 +1,29 @@
+<!-- posts-new.handlebars -->
+<div class="container">
+    <div class="row">
+        <div class="col-xs-8 col-xs-offset-8">
+            <form action="/sign-up" method="post">
+                <legend>New User</legend>
+                <div class="form-group">
+                    <label for="post-subreddit">Username</label>
+                    <input name="username" type="text" class="form-control" id="user-username" placeholder="Username">
+                </div>
+                <div class="form-group">
+                    <label for="post-title">Password</label>
+                    <input type="password" name="password" class="form-control" id="user-password">
+                </div>
+                <div class="form-group">
+                    <label for="post-url">Confirm Password</label>
+                    <input type='password' name="confirmPassword" class="form-control" id="user-confirm-password">
+                </div>
+                <div class="form-group">
+                    <label for="post-summary">Email</label>
+                    <input type="email" name="email" class="form-control" id="user-email" placeholder="you@domain.com"></textarea>
+                </div>
+                <div class='text-right'>
+                    <button type="submit" class="btn btn-primary">Create User</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

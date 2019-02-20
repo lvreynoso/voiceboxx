@@ -18,7 +18,9 @@ auth.post('/sign-up', async (req, res) => {
         console.log(err);
         return res.status(400).send({ err: err })
     });
-    const token = jwt.sign({ _id: user._id }, process.env.SECRET, { expiresIn: `60 days` });
+    const token = jwt.sign({ _id: user._id, username: user.username, admin: user.admin }, process.env.SECRET, {
+        expiresIn: `60 days`
+    });
     res.cookie(`nToken`, token, { maxAge: 900000, httpOnly: true });
     res.redirect(`/`);
 })
@@ -55,6 +57,17 @@ auth.post(`/login`, async (req, res) => {
         res.cookie(`nToken`, token, { maxAge: 900000, httpOnly: true });
         res.redirect(`/`);
     })
+})
+
+auth.get('/profile', async (req, res) => {
+    const query = {
+        _id: req.user._id
+    }
+    const user = await User.findOne(query).catch(err => {
+        console.log(err);
+        return res.status(500).send(err);
+    })
+    res.render('profile', { user: user });
 })
 
 export default auth;

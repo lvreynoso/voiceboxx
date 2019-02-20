@@ -1,7 +1,15 @@
 html,
 body {
   height: 100%;
-  background-image: linear-gradient(to bottom right, #33ccff, #9400D3);  
+  background-image: linear-gradient(to bottom right, #33ccff, #9400D3);
+}
+
+a:link {
+    color: white;
+}
+
+a:visited {
+    color: white;
 }
 
 .logo{
@@ -12,7 +20,7 @@ body {
   -webkit-text-stroke-color: rgb(100, 101, 101);
   text-shadow:
     3px 3px 0 #000,
-    -1px -1px 0 #000,  
+    -1px -1px 0 #000,
     1px -1px 0 #000,
     -1px 1px 0 #000,
     1px 1px 0 #000;

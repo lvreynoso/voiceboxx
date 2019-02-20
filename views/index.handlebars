@@ -3,6 +3,15 @@
     <div class="row">
         <div class="col-xs-8">
             <h1 class="logo">Voiceboxx</h1>
+            {{#if currentUser}}
+                <p>You are logged in.</p>
+                <p><a href="/profile">View profile</a></p>
+                <p><a href="/logout">Logout</a></p>
+            {{else}}
+                <p>Not logged in.</p>
+                <p><a href="/login">Login</a></p>
+                <p><a href="/sign-up">Sign Up</a></p>
+            {{/if}}
         </div>
     </div>
 </div>
