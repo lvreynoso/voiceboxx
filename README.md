@@ -25,7 +25,7 @@ For the live version, click [here](http://voiceboxx.herokuapp.com)
 This project is licensed under the MIT License - see the [LICENSE](https://github.com/lvreynoso/voiceboxx/blob/master/LICENSE) file for details
 
 ## Screenshot
-
+![screen shot 2019-02-20 at 12 23 30 pm](https://user-images.githubusercontent.com/26418542/53125839-b93dda00-3513-11e9-9fb8-bb3f3e9178e0.png)
 
 ## Built With
 This project was built with the help of: 
