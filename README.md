@@ -6,7 +6,7 @@ Track your technique and tone singing Karaoke to your favorite songs!
 For the live version, click [here](http://voiceboxx.herokuapp.com)
 
 ## Table of contents
-* [Engineers](#engineers)
+* [Team](#team)
 * [License](#license)
 * [Screenshot](#screenshot)
 * [Installing](#installing)
@@ -15,7 +15,7 @@ For the live version, click [here](http://voiceboxx.herokuapp.com)
 * [Running](#running)
 * [Build With](#built-with)
 
-## Engineers
+## Team
 * **[Stephanie Cherubin](https://github.com/StephanieCherubin)** - *Project Manager*
 * **[Lucia Reynoso](https://github.com/lvreynoso)** - *Gitmaster*
 * **[Henry Bowe](https://github.com/hleejr)** - *Lead Back End Lead Engineer*
