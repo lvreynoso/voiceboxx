@@ -13,6 +13,7 @@ import cookieParser from 'cookie-parser'
 
 // controllers
 import index from './controllers/index.js'
+import auth from './controllers/auth.js'
 
 // db and models
 import database from './database/database.js'
@@ -43,6 +44,7 @@ app.set('view engine', 'handlebars');
 
 // routes
 app.use('/', index)
+app.use('/', auth)
 
 // face the world
 const hotPort = app.get('port')
