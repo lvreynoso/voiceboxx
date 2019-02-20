@@ -1,4 +1,4 @@
-# voiceboxx
+# 🎙voiceboxx🎤
 
 ## About
 An interactive Karaoke / Sing-off web app
