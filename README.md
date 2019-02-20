@@ -13,7 +13,7 @@ For the live version, click [here](http://voiceboxx.herokuapp.com)
 * [Building](#building)
 * [Testing](#testing)
 * [Running](#running)
-* [Build With](#built-with)
+* [Built With](#built-with)
 
 ## Team
 * **[Stephanie Cherubin](https://github.com/StephanieCherubin)** - *Project Manager*
