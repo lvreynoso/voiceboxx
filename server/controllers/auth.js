@@ -30,7 +30,9 @@ auth.post('/sign-up', async (req, res) => {
   });
 
   const token = _jsonwebtoken.default.sign({
-    _id: user._id
+    _id: user._id,
+    username: user.username,
+    admin: user.admin
   }, process.env.SECRET, {
     expiresIn: `60 days`
   });
@@ -87,6 +89,18 @@ auth.post(`/login`, async (req, res) => {
       httpOnly: true
     });
     res.redirect(`/`);
+  });
+});
+auth.get('/profile', async (req, res) => {
+  const query = {
+    _id: req.user._id
+  };
+  const user = await _user.default.findOne(query).catch(err => {
+    console.log(err);
+    return res.status(500).send(err);
+  });
+  res.render('profile', {
+    user: user
   });
 });
 var _default = auth;

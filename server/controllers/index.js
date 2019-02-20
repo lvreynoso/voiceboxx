@@ -14,7 +14,6 @@ const index = _express.default.Router();
 
 index.get('/', (req, res) => {
   const currentUser = req.user;
-  console.log(req.cookies);
   res.render('index', {
     currentUser
   });
