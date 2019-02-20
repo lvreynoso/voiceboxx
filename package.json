@@ -1,27 +1,28 @@
 {
-  "name": "mimikov",
+  "name": "voiceboxx",
   "version": "1.0.0",
-  "description": "A Node.js-based web app to generate MIDI music using markov chains",
+  "description": "An interactive Karaoke / Sing-off web app",
   "main": "server.js",
   "scripts": {
     "test": "mocha --require @babel/polyfill --require @babel/register --exit",
     "clean": "rm -rf server && mkdir server && rm -rf ./public/dist && mkdir ./public/dist",
     "build-server": "babel -d ./server ./source -s",
     "build-frontend": "babel -d ./public/dist ./public/src -s",
-    "build": "npm run clean && npm run build-server && npm run build-frontend",
+    "browserify": "browserify ./public/dist/test.js > ./public/scripts/test.js",
+    "build": "npm run clean && npm run build-server && npm run build-frontend && npm run browserify",
     "start": "node ./server/server.js",
     "dev": "nodemon --exec babel-node -- ./source/server.js"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/lvreynoso/mimikov.git"
+    "url": "git+https://github.com/lvreynoso/voiceboxx.git"
   },
   "author": "Lucia Reynoso",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/lvreynoso/mimikov/issues"
+    "url": "https://github.com/lvreynoso/voiceboxx/issues"
   },
-  "homepage": "https://github.com/lvreynoso/mimikov#readme",
+  "homepage": "https://github.com/lvreynoso/voiceboxx#readme",
   "dependencies": {
     "bcryptjs": "^2.4.3",
     "body-parser": "^1.18.3",
@@ -31,8 +32,7 @@
     "express-handlebars": "^3.0.0",
     "express-validator": "^5.3.0",
     "jsonwebtoken": "^8.4.0",
-    "mongoose": "^5.3.14",
-    "pitchy": "^1.0.4"
+    "mongoose": "^5.3.14"
   },
   "devDependencies": {
     "@babel/cli": "^7.2.0",
@@ -43,6 +43,7 @@
     "@babel/register": "^7.0.0",
     "chai": "^4.2.0",
     "chai-http": "^4.2.0",
-    "mocha": "^5.2.0"
+    "mocha": "^5.2.0",
+    "pitchy": "^1.0.4"
   }
 }

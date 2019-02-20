@@ -5,8 +5,6 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.default = void 0;
 
-require("core-js/modules/web.dom.iterable");
-
 var _mongoose = _interopRequireDefault(require("mongoose"));
 
 var _bcryptjs = _interopRequireDefault(require("bcryptjs"));
@@ -34,19 +32,6 @@ const UserSchema = new Schema({
   },
   email: {
     type: String
-  },
-  posts: [{
-    type: Schema.Types.ObjectId,
-    ref: "Post"
-  }],
-  comments: [{
-    type: Schema.Types.ObjectId,
-    ref: "Comment"
-  }],
-  votes: {
-    type: Map,
-    of: Boolean,
-    default: {}
   },
   admin: {
     type: Boolean

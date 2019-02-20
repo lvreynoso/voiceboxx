@@ -11,9 +11,6 @@ const UserSchema = new Schema({
     password: { type: String, required: true, select: false },
     username: { type: String, required: true},
     email: { type: String },
-    posts: [{ type: Schema.Types.ObjectId, ref: "Post" }],
-    comments: [{ type: Schema.Types.ObjectId, ref: "Comment" }],
-    votes: { type: Map, of: Boolean, default: {} },
     admin: { type: Boolean }
 
 })

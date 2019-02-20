@@ -25,8 +25,11 @@ function updatePitch(analyserNode, sampleRate) {
       pitch = _findPitch2[0],
       clarity = _findPitch2[1];
 
-  document.getElementById('pitch').textContent = String(pitch);
-  document.getElementById('clarity').textContent = String(clarity);
+  if (clarity > 0.98) {
+    document.getElementById('pitch').textContent = String(pitch);
+    document.getElementById('clarity').textContent = String(clarity);
+  }
+
   window.requestAnimationFrame(() => updatePitch(analyserNode, sampleRate));
 }
 

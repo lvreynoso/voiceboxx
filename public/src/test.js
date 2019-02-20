@@ -6,8 +6,10 @@ function updatePitch(analyserNode, sampleRate) {
   analyserNode.getFloatTimeDomainData(data);
   let [pitch, clarity] = findPitch(data, sampleRate);
 
-  document.getElementById('pitch').textContent = String(pitch);
-  document.getElementById('clarity').textContent = String(clarity);
+  if (clarity > 0.98) {
+      document.getElementById('pitch').textContent = String(pitch);
+      document.getElementById('clarity').textContent = String(clarity);
+  }
   window.requestAnimationFrame(() => updatePitch(analyserNode, sampleRate));
 }
 
