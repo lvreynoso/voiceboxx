@@ -6,7 +6,7 @@ Track your technique and tone singing Karaoke to your favorite songs!
 For the live version, click [here](http://voiceboxx.herokuapp.com)
 
 ## Table of contents
-* [Engineers](#engineers
+* [Engineers](#engineers)
 * [License](#license)
 * [Screenshot](#screenshot)
 * [Installing](#installing)
