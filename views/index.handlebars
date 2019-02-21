@@ -1,17 +1,20 @@
-<!-- index.handlebars -->
-<div class="container">
-    <div class="row">
-        <div class="col-xs-8">
-            <h1 class="logo">Voiceboxx</h1>
-            {{#if currentUser}}
-                <p>You are logged in.</p>
-                <p><a href="/profile">View profile</a></p>
-                <p><a href="/logout">Logout</a></p>
-            {{else}}
-                <p>Not logged in.</p>
-                <p><a href="/login">Login</a></p>
-                <p><a href="/sign-up">Sign Up</a></p>
-            {{/if}}
-        </div>
+<div class="hero">
+    <div class="heroTitle">VOICEBOXX</div>
+    <div class="forms">
+        {{#if currentUser}}
+        <form action='/profile'>
+            <button class="heroButton login">PROFILE</button>
+        </form>
+        <form action='/logout'>
+            <button class="heroButton">LOGOUT</button>
+        </form>
+        {{else}}
+        <form action='/login'>
+            <button class="heroButton login">LOGIN</button>
+        </form>
+        <form action='/sign-up'>
+            <button class="heroButton">SIGN-UP</button>
+        </form>
+        {{/if}}
     </div>
 </div>
