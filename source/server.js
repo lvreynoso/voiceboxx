@@ -15,6 +15,7 @@ import cookieParser from 'cookie-parser'
 import index from './controllers/index.js'
 import auth from './controllers/auth.js'
 import test from './controllers/test.js'
+import sing from './controllers/sing.js'
 
 // db and models
 import database from './database/database.js'
@@ -47,6 +48,7 @@ app.set('view engine', 'handlebars');
 app.use('/', index)
 app.use('/', auth)
 app.use('/test', test)
+app.use('/sing', sing)
 
 // face the world
 const hotPort = app.get('port')
