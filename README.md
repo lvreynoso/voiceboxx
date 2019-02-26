@@ -46,6 +46,6 @@ the `/server` and `/public/scripts` directories.
 No automated tests have been written yet.
 
 ## Running
-The compiled project can be run with the command `npm start`. Press Ctrl + c to kill http-server process.
+The compiled project can be run with the command `npm start`. Press `Ctrl + C` to kill http-server process.
 
 
