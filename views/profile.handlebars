@@ -1,10 +1,21 @@
-<div class="container">
-    <div class="row">
-        <div class="col-xs-8 col-xs-offset-8">
-            <h1>Profile</h1>
-            <p>Username: {{user.username}}</p>
-            <p>Email: {{user.email}}</p>
-            <p><a href="/">Go Back</a></p>
-        </div>
-    </div>
+<div class="wrapper">
+        <button onclick="location.href = '/logout';" class="logout hvr-grow">LOG-OUT</button>
+        <img src="profile.jpg" alt="">
+        <div class="profileHeading">HELLO {{user.username}}</div>
+        <div class="subheading">WHAT SONG DO YOU WANT TO SING TODAY?</div>
+            <ul class="song-list">
+                <li class="card">
+                    <div class="songtitle">GOD IS A WOMAN</div>
+                    <div class="artist">Ariana Grande</div>
+                </li>
+                <li class="card">
+                        <div class="songtitle">THANK YOU, NEXT</div>
+                        <div class="artist">Ariana Grande</div>
+                </li>
+                <li class="card">
+                        <div class="songtitle">PROBLEM</div>
+                        <div class="artist">Ariana Grande</div>
+                </li>
+            </ul>
+        
 </div>

@@ -1,16 +1,12 @@
 <div class="wrapper">
-    <form action="/sign-up" method="post" class="logincontainer signupcontain">
-        <div class="loginlabel">SIGNUP</div>
-        <div class="label">USERNAME</div>
-        <input name="username" type="text">
-        <div class="label">PASSWORD</div>
-        <input type="password" name="password">
-        <div class="label">CONFIRM PASSWORD</div>
-        <input type="password" name="confirmPassword">
-        <div class="label">EMAIL</div>
-        <input type="text" name="email">
-        <br></br>
-        <button type="submit" class="loginButton">SUBMIT</button>
-        <div class="forgot account"> ALREADY HAVE AN ACCOUNT? </div>
+    <div class="heading">Lets get you singing</div>
+    <div class="subheading">CREATE YOUR ACCOUNT</div>
+    <form action="/sign-up" method="POST">
+        <input name="username" type="text" placeholder="USERNAME">
+        <input name="password" type="text" placeholder="PASSWORD">
+        <input name="confirmPassword" type="text" placeholder="CONFIRM PASSWORD">
+        <input name="email" type="text" placeholder="EMAIL">
+        <a href="/login" class="account">ALREADY HAVE AN ACCOUNT?</a>
+        <button class="submitbutton" type="submit">SUBMIT</button>
     </form>
 </div>
