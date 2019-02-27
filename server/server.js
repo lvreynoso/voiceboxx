@@ -23,6 +23,8 @@ var _auth = _interopRequireDefault(require("./controllers/auth.js"));
 
 var _test = _interopRequireDefault(require("./controllers/test.js"));
 
+var _sing = _interopRequireDefault(require("./controllers/sing.js"));
+
 var _database = _interopRequireDefault(require("./database/database.js"));
 
 var _exphbsConfig = _interopRequireDefault(require("./config/exphbs-config.js"));
@@ -55,7 +57,8 @@ app.set('view engine', 'handlebars'); // routes
 
 app.use('/', _index.default);
 app.use('/', _auth.default);
-app.use('/test', _test.default); // face the world
+app.use('/test', _test.default);
+app.use('/sing', _sing.default); // face the world
 
 const hotPort = app.get('port');
 const server = app.listen(hotPort, () => {

@@ -25,7 +25,7 @@ function updatePitch(analyserNode, sampleRate) {
       pitch = _findPitch2[0],
       clarity = _findPitch2[1];
 
-  if (clarity > 0.98) {
+  if (clarity > 0.95) {
     document.getElementById('pitch').textContent = String(pitch);
     document.getElementById('clarity').textContent = String(clarity);
   }
@@ -45,4 +45,4 @@ document.addEventListener("DOMContentLoaded", () => {
     updatePitch(analyserNode, audioContext.sampleRate);
   });
 });
-//# sourceMappingURL=test.js.map
+//# sourceMappingURL=listener.js.map

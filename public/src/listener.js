@@ -6,7 +6,7 @@ function updatePitch(analyserNode, sampleRate) {
   analyserNode.getFloatTimeDomainData(data);
   let [pitch, clarity] = findPitch(data, sampleRate);
 
-  if (clarity > 0.98) {
+  if (clarity > 0.95) {
       document.getElementById('pitch').textContent = String(pitch);
       document.getElementById('clarity').textContent = String(clarity);
   }
