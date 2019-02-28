@@ -1,10 +1,19 @@
 <!-- sing.handlebars -->
 <div class="wrapper">
     <div class="heading">TEST PAGE</div>
+    <div class="mic">🎙: <span id="mic">Quiet</span></div>
     <div class="voiceWrapper">
         <div class="pitchWrapper">
             <div class="subheading">PITCH</div>
-            <div class="pitch" id="pitch">$VALUE</div>
+            <div class="pitch"><span id="pitch">$VALUE</span> Hz</div>
+        </div>
+        <div class="pitchWrapper">
+            <div class="subheading">NOTE</div>
+            <div class="pitch"><span id="note">$VALUE</span><sub id="octave">$OCTAVE</sub></div>
+        </div>
+        <div class="pitchWrapper">
+            <div class="subheading">TUNING</div>
+            <div class="pitch" id="tuning">$VALUE</div>
         </div>
         <div class="pitchWrapper">
             <div class="subheading">CLARITY</div>
