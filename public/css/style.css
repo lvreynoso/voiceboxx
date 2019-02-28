@@ -76,7 +76,7 @@
 .heading {
 	padding-top: 100px;
 	font-family: Bondi;
-	font-size: 100px;
+	font-size: calc(60px + 2vw);
 	font-weight: 700;
 }
 
@@ -89,7 +89,7 @@ form {
 
 .subheading {
 	font-family: Source Sans Pro;
-	font-size: 30px;
+	font-size: 1vw;
 	font-weight: 700;
 	letter-spacing: 1px;
 	padding: 20px;
@@ -102,8 +102,8 @@ input {
 	width: 370px;
 	border: none;
 	border-radius: 30px;
-	color: red;
-	height: 35px;
+	color: black;
+	height: 40px;
 	text-align: center;
 }
 
@@ -136,6 +136,7 @@ body {
 }
 
 .artist {
+	font-size:20px;
 	padding-left: 20px;
 }
 
@@ -162,14 +163,14 @@ body {
 .profileHeading {
 	padding-top: 20px;
 	font-family: Bondi;
-	font-size: 100px;
+	font-size: calc(60px + 2vw);
 	font-weight: 700;
 	margin-bottom: -20px;
 }
 
 .subheading {
 	font-family: Source Sans Pro;
-	font-size: 30px;
+	font-size: calc(13px + 1vw);
 	font-weight: 700;
 	letter-spacing: 1px;
 	padding: 10px;
@@ -189,6 +190,23 @@ li {
 	height: 100px;
 	width: 100%;
 	color: #5d5d5d;
+}
+
+.voiceWrapper {
+	display: flex;
+	
+}
+
+.pitchWrapper {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	padding: 20px;
+}
+
+.error {
+	padding-bottom: 15px;
+	color: #FFFF11;
 }
 
 li:after {
@@ -225,6 +243,7 @@ li:last-child {
 .songtitle {
 	font-size: 30px;
 	padding: 10px;
+	padding-bottom: 0px;
 	padding-left: 17px;
 	font-weight: 900;
 }
@@ -233,6 +252,8 @@ img {
 	margin-top: 30px;
 	width: 200px;
 	height: 200px;
+	min-width: 200px;
+	min-height: 200px;
 	border-radius: 50%;
 	margin-right: 15px;
 	background-image: url("profile.jpg");
@@ -253,3 +274,42 @@ img {
 	top: 10px;
 	right: 20px;
 }
+
+.test {
+	font-family: Source Sans Pro;
+	font-weight: 700;
+	border: 3px solid white;
+	border-radius: 10px;
+	padding: 10px;
+	background-color:transparent;
+	color: white;
+	margin: 10px;
+	font-size: 1em;
+	position: absolute;
+	top: 10px;
+	right: 130px;
+}
+
+/* 
+@media only screen and (max-width: 915px) {
+	.heading {
+	  font-size: 75px;
+	}
+}
+
+@media only screen and (max-width: 685px) {
+	.heading {
+	  font-size: 35px;
+	}
+	.subheading {
+		font-size: 20px;
+	}
+
+	input {
+		width: 300px;
+	}
+
+	.submitbutton {
+		width: 200px;
+	}
+  } */
