@@ -5,8 +5,6 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.default = void 0;
 
-require('dotenv').config();
-
 var _express = _interopRequireDefault(require("express"));
 
 var _jsonwebtoken = _interopRequireDefault(require("jsonwebtoken"));
@@ -64,13 +62,17 @@ auth.post(`/login`, async (req, res) => {
 
   if (!user) {
     // user not found
-    return res.render(`login-error`)
+    return res.status(401).send({
+      message: `Wrong username or password`
+    });
   } // check the password
 
 
   user.comparePassword(password, (err, isMatch) => {
     if (!isMatch) {
-      return res.render(`login-error`)
+      return res.status(401).send({
+        message: `Wrong username or password`
+      });
     } // create a token
 
 
