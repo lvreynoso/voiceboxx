@@ -6,7 +6,7 @@ function updatePitch(analyserNode, sampleRate) {
   analyserNode.getFloatTimeDomainData(data);
   let [pitch, clarity] = findPitch(data, sampleRate);
 
-  if (clarity > 0.95) {
+  if (clarity > 0.96) {
     let converted = pitchToNote(pitch)
     let roundedPitch = Math.round(pitch * 100) / 100
     let roundedClarity = Math.round(clarity * 100)
