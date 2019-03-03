@@ -3,7 +3,9 @@
 ## About
 An interactive Karaoke / Sing-off web app<br>
 Track your technique and tone singing Karaoke to your favorite songs!<br>
-For the live version, click [here](http://voiceboxx.herokuapp.com)
+For the slide deck presentations, click [here](https://www.canva.com/design/DADSxpu1SzQ/share?role=VIEWER&token=JYmzTAAVtrAiKBtfjMQISg&utm_content=DADSxpu1SzQ&utm_campaign=designshare&utm_medium=link&utm_source=sharebutton).<br>
+For the live version, click [here](http://voiceboxx.herokuapp.com).
+
 
 ## Table of contents
 * [Team](#team)
