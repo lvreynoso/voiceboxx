@@ -29,6 +29,32 @@
 	font-weight: 700;
 }
 
+.screen {
+	width: 70vw;
+	height: 70vh;
+	background-color: red;
+	display: grid;
+	grid-template-columns: 3fr 1fr;
+	grid-template-areas: "a b"
+						 "a c"
+}
+
+.lyrics {
+grid-area: a;
+background-color: yellow;
+}
+
+.song-note {
+background: blue;
+grid-area: b;
+}
+
+.user-note {
+background-color: red;
+grid-area: c;
+}
+	
+
 .indexbutton {
 	font-family: Source Sans Pro;
 	font-weight: 700;
@@ -74,7 +100,7 @@
 }
 
 .heading {
-	padding-top: 100px;
+	padding-top: 50px;
 	font-family: Bondi;
 	font-size: calc(60px + 2vw);
 	font-weight: 700;
