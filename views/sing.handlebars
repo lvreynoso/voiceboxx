@@ -5,18 +5,23 @@
     <div class="">🎙: <img src="/img/offline.png" id="mic"></div>
     <div class="voiceWrapper">
         <div class="pitchWrapper">
-            <div class="subheading">NOTE</div>
-            <div class="note"><span id="note">$VALUE</span><sub id="octave">$OCTAVE</sub></div>
+            <div class="subheading">YOUR VOICE</div>
+            <div class="note"><span id="note">--</span><sub id="octave">--</sub></div>
         </div>
         <div class="pitchWrapper">
-            <div class="subheading">TARGET</div>
-            <div class="note"><span id="target">$VALUE</span><sub id="targetOctave">$OCTAVE</sub></div>
+            <div class="subheading">CURRENT NOTE</div>
+            <div class="note"><span id="target">--</span><sub id="targetOctave">--</sub></div>
         </div>
     </div>
     <div class="lyrics"><span style="white-space: pre-line; display: none;">{{song.lyrics}}</span></div>
     <div class="vextab"><span style="white-space: pre-line; display: none;" id="vextab">{{song.tab}}</span></div>
     <div class="sheet">
-        <div id="vexcontainer"></div>
+        <div id="vexcontainer">
+            <div id="vexcanvas"></div>
+        </div>
+    </div>
+    <div id="controls">
+      <button id='play'>Play</button>
     </div>
     <div class="voiceWrapper">
         <div class="pitchWrapper">

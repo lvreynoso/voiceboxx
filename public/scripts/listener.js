@@ -4,13 +4,20 @@ import Vex from '/web_modules/vexflow.js';
 
 // VexFlow setup
 var VF = Vex.Flow;
-var node = document.getElementById('vexcontainer');
-node.width = `${window.innerWidth / 2}px`
-node.height = `${window.innerHeight / 4}px`
+var container = document.getElementById('vexcontainer');
+container.style.width = `${window.innerWidth / 1.5}px`
+container.style.height = `${window.innerHeight / 4}px`
+var node = document.getElementById('vexcanvas');
+// node.width = `${window.innerWidth / 2}px`
+// node.height = `${window.innerHeight / 4}px`
 var renderer = new VF.Renderer(node, VF.Renderer.Backends.SVG);
-renderer.resize(window.innerWidth / 2, window.innerHeight / 4);
+renderer.resize(7500, window.innerHeight / 4);
 var context = renderer.getContext();
-// context.setFont("Arial", 10, "").setBackgroundFillStyle("#eed");
+context.setFont("Arial", 10, "").setBackgroundFillStyle("#eed");
+
+var notes = []
+var visibles = []
+var pos = 0
 
 document.addEventListener("DOMContentLoaded", () => {
   // For cross-browser compatibility.
@@ -24,19 +31,32 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 
+document.getElementById('play').addEventListener('click', (e) => {
+  scrollNotes();
+});
+
 window.onload = function() {
   setupVF();
 }
 
+function scrollNotes() {
+  requestAnimationFrame(scrollNotes)
+  pos -= 1
+  node.style.marginLeft = `${pos}px`
+}
+
 function setupVF() {
   // Create a stave at position 10, 40 of width 10000 on the canvas.
-  let stave = new VF.Stave(10, 40, 10000);
+  let stave = new VF.Stave(10, 40, 7500);
 
   // Add a clef and time signature.
   stave.addClef("treble").addTimeSignature("4/4");
 
   // Connect it to the rendering context and draw!
   stave.setContext(context).draw();
+
+  let tickContext = new VF.TickContext();
+  tickContext.preFormat().setX(400);
 
   // get the tab from the vextab node
   let data = document.getElementById('vextab').textContent.split("\n**TIES**\n")
@@ -48,6 +68,7 @@ function setupVF() {
       return 99
     }
     let note = new VF.StaveNote({clef: "treble", keys: [properties[0]], duration: properties[2]})
+    note.setContext(context).setStave(stave);
     switch (properties[1]) {
       case "sd":
         note.addDot(0)
@@ -65,20 +86,25 @@ function setupVF() {
       default:
         break
     }
+    tickContext.addTickable(note);
     return note
   })
 
-  let notes = rawNotes.filter(note => note != 99);
+  // filter any bad data
+  notes = rawNotes.filter(note => note != 99);
 
   // create a VF 'voice' and add it to the canvas
-  let voice = new VF.Voice({num_beats: 4,  beat_value: 4});
-  voice.setStrict(false);
-  voice.addTickables(notes);
-  let formatter = new VF.Formatter().joinVoices([voice]).format([voice], 400);
-  voice.draw(context, stave);
+  // let voice = new VF.Voice({num_beats: 4,  beat_value: 4});
+  // voice.setStrict(false);
+  // voice.addTickables(notes);
+  // let formatter = new VF.Formatter().joinVoices([voice]).format([voice], 400);
+  // voice.draw(context, stave);
 
-  // draw the beams
+  // create the beams
   let beams = VF.Beam.generateBeams(notes)
+
+  // draw the canvas
+  VF.Formatter.FormatAndDraw(context, stave, notes)
   beams.forEach(beam => {
     beam.setContext(context).draw()
   })
