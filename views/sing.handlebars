@@ -15,6 +15,7 @@
     </div>
     <div class="lyrics"><span style="white-space: pre-line; display: none;">{{song.lyrics}}</span></div>
     <div class="vextab"><span style="white-space: pre-line; display: none;" id="vextab">{{song.tab}}</span></div>
+    <div class="audio"><span style="white-space: pre-line; display: none;" id="audio">{{song.audio}}</span></div>
     <div class="sheet">
         <div id="vexcontainer">
             <div id="vexcanvas"></div>
@@ -22,6 +23,7 @@
     </div>
     <div id="controls">
       <button id='play'>Play</button>
+      <button id="stop">Stop</button>
     </div>
     <div class="voiceWrapper">
         <div class="pitchWrapper">
@@ -39,5 +41,5 @@
     </div>
 </div>
 <div>
-    <script type="module" src="/scripts/listener.js"></script>
+    <script type="module" src="/scripts/listenerAnn.js"></script>
 </div>

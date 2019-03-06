@@ -19,7 +19,8 @@ sing.get('/:artist/:song', async (req, res) => {
         console.log(err)
     })
 
-    console.log(song)
+    song.audio = song.data.toString('base64');
+    delete song.data;
 
     res.render('sing', { song: song })
 })
