@@ -1,3 +1,58 @@
+/* VexFlow stuff */
+
+#vexcontainer {
+  overflow: hidden;
+  border: 1px solid black;
+  margin: 10px;
+  background-color: white;
+}
+
+#vexcontainer > div {
+  width: 10000px;
+  height: 120px;
+  white-space: nowrap;
+}
+
+#controls {
+  padding: 15px;
+}
+
+#controls > button {
+  margin: 5px;
+}
+
+.scroll {
+  transition: transform 5s linear, opacity 0.5s ease-out;
+}
+
+.scrolling {
+  transform: translate(-400px, 0);
+}
+
+.correct {
+  opacity: 0;
+}
+
+.too-slow {
+  transform: translate(-400px, 2000px);
+}
+}
+.sheet {
+	text-align: center; 
+	background-color: white;
+}
+
+.lyrics {
+	font-family: 'PT Mono', monospace;
+	font-size: 20px;
+}
+
+.note {
+	font-size: 48px;
+	color: deeppink;
+}
+
+/* */
 .wrapper {
 	width: 100vw;
 	height: 100vh;
@@ -37,11 +92,6 @@
 	grid-template-columns: 3fr 1fr;
 	grid-template-areas: "a b"
 						 "a c"
-}
-
-.lyrics {
-grid-area: a;
-background-color: yellow;
 }
 
 .song-note {
@@ -100,10 +150,10 @@ grid-area: c;
 }
 
 .heading {
-	padding-top: 50px;
+	padding-top: 15px;
 	font-family: Bondi;
-	font-size: calc(60px + 2vw);
-	font-weight: 700;
+	font-size: 48pt;
+	font-weight: 70;
 }
 
 form {
@@ -274,7 +324,7 @@ li:last-child {
 	font-weight: 900;
 }
 
-img {
+.profile {
 	margin-top: 30px;
 	width: 200px;
 	height: 200px;

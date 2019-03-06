@@ -9,6 +9,7 @@ const SongSchema = new Schema({
     title: { type: String, required: true },
     lyrics: { type: String },
     notes: { type: String },
+    tab: { type: String },
     data: Buffer
 })
 
