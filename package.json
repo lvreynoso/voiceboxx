@@ -8,9 +8,10 @@
     "clean": "rm -rf server && mkdir server && rm -rf ./public/dist && mkdir ./public/dist",
     "build-server": "babel -d ./server ./source -s",
     "build": "npm run clean && npm run build-server",
-    "start": "node ./server/server.js",
+    "old-start": "node ./server/server.js",
+    "start": "nodemon --exec babel-node -- ./source/server.js",
     "dev": "nodemon --exec babel-node -- ./source/server.js",
-    "prepare": "pika-web --dest public/web_modules/"
+    "manual-prepare": "pika-web --dest public/web_modules/"
   },
   "repository": {
     "type": "git",
