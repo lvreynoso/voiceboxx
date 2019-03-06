@@ -19,7 +19,7 @@ For the live version, click [here](http://voiceboxx.herokuapp.com).
 
 ## Team
 * **[Stephanie Cherubin](https://github.com/StephanieCherubin)** - *Project Manager/ UX Researcher*
-* **[Lucia Reynoso](https://github.com/lvreynoso)** - *Gitmaster/Lead Back End *
+* **[Lucia Reynoso](https://github.com/lvreynoso)** - *Gitmaster/Lead Back End*
 * **[Henry Bowe](https://github.com/hleejr)** - *Back End Lead Engineer*
 * **[Salvador Becerra](https://github.com/salvadb23)** - *Lead Front End Engineer/ UI Engineer*
 
