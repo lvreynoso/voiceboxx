@@ -1,15 +1,23 @@
 <!-- sing.handlebars -->
 <div class="wrapper">
-    <div class="heading">SING YOUR HEART OUT</div>
+    <div class="heading">{{song.artist}}</div>
+    <div class="heading">{{song.title}}</div>
     <div class="mic">🎙: <span id="mic">Quiet</span></div>
+    <div class="voiceWrapper">
+        <div class="pitchWrapper">
+            <div class="subheading">NOTE</div>
+            <div class="pitch"><span id="note">$VALUE</span><sub id="octave">$OCTAVE</sub></div>
+        </div>
+        <div class="pitchWrapper">
+            <div class="subheading">TARGET</div>
+            <div class="pitch"><span id="target">$VALUE</span><sub id="targetOctave">$OCTAVE</sub></div>
+        </div>
+    </div>
+    <div class="lyrics"><span style="white-space: pre-line">{{song.lyrics}}</span></div>
     <div class="voiceWrapper">
         <div class="pitchWrapper">
             <div class="subheading">PITCH</div>
             <div class="pitch"><span id="pitch">$VALUE</span> Hz</div>
-        </div>
-        <div class="pitchWrapper">
-            <div class="subheading">NOTE</div>
-            <div class="pitch"><span id="note">$VALUE</span><sub id="octave">$OCTAVE</sub></div>
         </div>
         <div class="pitchWrapper">
             <div class="subheading">TUNING</div>
@@ -21,6 +29,6 @@
         </div>
     </div>
 </div>
-<div class="">
-    <script type="module" src="scripts/listener.js"></script>
+<div>
+    <script type="module" src="/scripts/listener.js"></script>
 </div>
