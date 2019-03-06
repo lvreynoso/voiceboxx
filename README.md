@@ -35,7 +35,7 @@ This project was built with the help of:
 * [P5.js Sound Library](https://p5js.org/reference/#/libraries/p5.sound) - Javascript Sound Library
 
 ## Installing
-We need [Node.js](https://nodejs.org) to install and run scripts.
+You would need [Node.js](https://nodejs.org) to install and run scripts.
 Clone the project project and run the command `npm install`.
 
 ## Developing
