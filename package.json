@@ -9,7 +9,7 @@
     "build-server": "babel -d ./server ./source -s",
     "build": "npm run clean && npm run build-server",
     "old-start": "node ./server/server.js",
-    "start": "nodemon --exec babel-node -- ./source/server.js",
+    "start": "babel-node -- ./source/server.js",
     "dev": "nodemon --exec babel-node -- ./source/server.js",
     "manual-prepare": "pika-web --dest public/web_modules/"
   },
