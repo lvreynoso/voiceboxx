@@ -1,15 +1,34 @@
 <!-- sing.handlebars -->
 <div class="wrapper">
-    <div class="heading">SING YOUR HEART OUT</div>
-    <div class="mic">🎙: <span id="mic">Quiet</span></div>
+    <div class="heading">{{song.artist}}</div>
+    <div class="heading">{{song.title}}</div>
+    <div class="">🎙: <img src="/img/offline.png" id="mic"></div>
+    <div class="voiceWrapper">
+        <div class="pitchWrapper">
+            <div class="subheading">YOUR VOICE</div>
+            <div class="note"><span id="note">--</span><sub id="octave">--</sub></div>
+        </div>
+        <div class="pitchWrapper">
+            <div class="subheading">CURRENT NOTE</div>
+            <div class="note"><span id="target">--</span><sub id="targetOctave">--</sub></div>
+        </div>
+    </div>
+    <div class="lyrics"><span style="white-space: pre-line; display: none;">{{song.lyrics}}</span></div>
+    <div class="vextab"><span style="white-space: pre-line; display: none;" id="vextab">{{song.tab}}</span></div>
+    <div class="audio"><span style="white-space: pre-line; display: none;" id="audio">{{song.audio}}</span></div>
+    <div class="sheet">
+        <div id="vexcontainer">
+            <div id="vexcanvas"></div>
+        </div>
+    </div>
+    <div id="controls">
+      <button id='play'>Play</button>
+      <button id="stop">Stop</button>
+    </div>
     <div class="voiceWrapper">
         <div class="pitchWrapper">
             <div class="subheading">PITCH</div>
             <div class="pitch"><span id="pitch">$VALUE</span> Hz</div>
-        </div>
-        <div class="pitchWrapper">
-            <div class="subheading">NOTE</div>
-            <div class="pitch"><span id="note">$VALUE</span><sub id="octave">$OCTAVE</sub></div>
         </div>
         <div class="pitchWrapper">
             <div class="subheading">TUNING</div>
@@ -21,6 +40,6 @@
         </div>
     </div>
 </div>
-<div class="">
-    <script type="module" src="scripts/listener.js"></script>
+<div>
+    <script type="module" src="/scripts/listenerAnn.js"></script>
 </div>

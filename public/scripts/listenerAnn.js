@@ -8,8 +8,6 @@ var container = document.getElementById('vexcontainer');
 container.style.width = `${window.innerWidth / 1.5}px`
 container.style.height = `${window.innerHeight / 4}px`
 var node = document.getElementById('vexcanvas');
-// node.width = `${window.innerWidth / 2}px`
-// node.height = `${window.innerHeight / 4}px`
 var renderer = new VF.Renderer(node, VF.Renderer.Backends.SVG);
 renderer.resize(7500, window.innerHeight / 4);
 var context = renderer.getContext();
@@ -18,6 +16,19 @@ context.setFont("Arial", 10, "").setBackgroundFillStyle("#eed");
 var notes = []
 var visibles = []
 var pos = 0
+var playing = false
+var intro = true
+
+var targets = []
+var durations = []
+var noteStep = 0
+var quarter = 60000 / 92
+var time = 0
+var triptime = 0
+
+// Howler
+var sound = undefined
+var soundID = undefined
 
 document.addEventListener("DOMContentLoaded", () => {
   // For cross-browser compatibility.
@@ -32,17 +43,49 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 document.getElementById('play').addEventListener('click', (e) => {
+  playing = true;
   scrollNotes();
+  soundID = sound.play();
+  setTimeout(function() { intro = false }, 18000);
+});
+
+document.getElementById('stop').addEventListener('click', (e) => {
+  playing = false;
+  sound.pause(soundID);
 });
 
 window.onload = function() {
   setupVF();
+  setupHowler();
+  console.log(targets)
+  console.log(durations)
+}
+
+function setupHowler() {
+  let soundData = `data:audio/mpeg;base64,${document.getElementById("audio").textContent}`;
+  sound = new Howl({
+    src: [soundData],
+    format: ["m4a"]
+  })
 }
 
 function scrollNotes() {
-  requestAnimationFrame(scrollNotes)
-  pos -= 1
-  node.style.marginLeft = `${pos}px`
+  if (playing) {
+    requestAnimationFrame(scrollNotes)
+    node.style.marginLeft = `${pos}px`
+    // console.log(time, triptime)
+    if (time >= triptime) {
+      triptime += durations[noteStep]
+      document.getElementById('target').textContent = targets[noteStep][0]
+      document.getElementById('targetOctave').textContent = targets[noteStep][1]
+      noteStep += 1
+    }
+
+    time += 1000 / 60
+  }
+  if (!intro) {
+    pos -= 1762.5 / (window.innerWidth / 1.5)
+  }
 }
 
 function setupVF() {
@@ -86,9 +129,62 @@ function setupVF() {
       default:
         break
     }
+
+    // add note to the target list
+    let keyData = properties[0].split('/')
+    let noteKey = keyData[0].toUpperCase()
+    let noteOctave = keyData[1]
+    let duration = 0
+
+    // if it's a rest, display dashes
+    let d = properties[2]
+    if (d == "wr" || d == "hr" || d == "qr" || d == "8r" || d == "16r" || d == "32r") {
+      noteKey = "--"
+      noteOctave = "--"
+    }
+
+    // add note duration to the list
+    switch (properties[2]) {
+      case "wr":
+      case "w":
+        duration = quarter * 4 
+        break
+      case "hr":
+      case "h":
+        duration = quarter * 2 
+        break 
+      case "qr":
+      case "q":
+        duration = quarter 
+        break 
+      case "8r":
+      case "8":
+        duration = quarter / 2 
+        break
+      case "16r":
+      case "16":
+        duration = quarter / 4 
+        break
+      case "32r":
+      case "32":
+        duration = quarter / 8 
+        break 
+      default:
+        break
+    }
+
+    targets.push([noteKey, noteOctave])
+    durations.push(duration)
+
+    if (properties[3] != undefined) {
+      note.addAnnotation(0, newAnnotation(properties[3]))
+    }
+
     tickContext.addTickable(note);
     return note
   })
+
+  triptime += quarter * 9.5 // 3 measures worth of time??!
 
   // filter any bad data
   notes = rawNotes.filter(note => note != 99);
@@ -126,7 +222,13 @@ function setupVF() {
   // })
   // let ties = rawTies.filter(tie => tie != 99);
   // ties.forEach(tie => {tie.setContext(context).draw()})
+}
 
+function newAnnotation(text) {
+return (
+    new VF.Annotation(text)).
+    setFont("Times", 14).
+    setVerticalJustification(VF.Annotation.VerticalJustify.BOTTOM);
 }
 
 function updatePitch(analyserNode, sampleRate) {
@@ -268,6 +370,10 @@ function pitchToNote(pitch) {
   return output
 }
 
+// quarter note for 88 bpm is 681.81ms
+// which would put a 16th at 170.45ms
+
+// about 198.479 ms per sixteenth note
 
 // C0  16.35
 // C#0/Db0    17.32

@@ -1,16 +1,16 @@
 <div class="wrapper">
         <button onclick="location.href = '/logout';" class="logout hvr-grow">LOG-OUT</button>
-        <img src="profile.jpg" alt="">
+        <img src="/img/profile.jpg" alt="" id="profile" style="padding-top: 1em">
         <div class="profileHeading">HELLO {{user.username}}</div>
         <div class="subheading">WHAT SONG DO YOU WANT TO SING TODAY?</div>
         <ul class="song-list">
             <li class="card">
-                <div class="songtitle">GOD IS A WOMAN</div>
-                <div class="artist">Ariana Grande</div>
+                    <div class="songtitle"><a href="/sing/radiohead/creep">CREEP</a></div>
+                    <div class="artist">Radiohead</div>
             </li>
             <li class="card">
-                    <div class="songtitle">THANK YOU, NEXT</div>
-                    <div class="artist">Ariana Grande</div>
+                <div class="songtitle"><a href="/sing/ariana-grande/god-is-a-woman">GOD IS A WOMAN</a></div>
+                <div class="artist">Ariana Grande</div>
             </li>
             <li class="card">
                     <div class="songtitle">PROBLEM</div>

@@ -11,7 +11,8 @@
     "browserify": "browserify ./public/dist/listener.js > ./public/scripts/listener.js",
     "build": "npm run clean && npm run build-server && npm run build-frontend && npm run browserify",
     "start": "node ./server/server.js",
-    "dev": "nodemon --exec babel-node -- ./source/server.js"
+    "dev": "nodemon --exec babel-node -- ./source/server.js",
+    "prepare": "pika-web --dest public/web_modules/"
   },
   "repository": {
     "type": "git",
@@ -32,7 +33,10 @@
     "express-handlebars": "^3.0.0",
     "express-validator": "^5.3.0",
     "jsonwebtoken": "^8.4.0",
-    "mongoose": "^5.3.14"
+    "mongoose": "^5.3.14",
+    "slugify": "^1.3.4",
+    "vexflow": "^1.2.88",
+    "pitchy": "^1.0.4"
   },
   "devDependencies": {
     "@babel/cli": "^7.2.0",
@@ -41,9 +45,9 @@
     "@babel/polyfill": "^7.0.0",
     "@babel/preset-env": "^7.2.0",
     "@babel/register": "^7.0.0",
+    "@pika/web": "^0.3.0",
     "chai": "^4.2.0",
     "chai-http": "^4.2.0",
-    "mocha": "^5.2.0",
-    "pitchy": "^1.0.4"
+    "mocha": "^5.2.0"
   }
 }
