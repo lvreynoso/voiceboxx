@@ -253,6 +253,20 @@ function updatePitch(analyserNode, sampleRate) {
     document.getElementById('clarity').textContent = String(roundedClarity);
     document.getElementById('clarity').style.color = "red"
   }
+
+  // pitch checking
+  let inputNote = document.getElementById('note').textContent
+  let inputOctave = document.getElementById('octave').textContent
+  let targetNote = document.getElementById('target').textContent
+  let targetOctave = document.getElementById('targetOctave').textContent
+  if (inputNote == targetNote && inputOctave == targetOctave) {
+    document.getElementById('note').style.color = "lime"
+    document.getElementById('octave').style.color = "lime"
+  } else {
+    document.getElementById('note').style.color = "red"
+    document.getElementById('octave').style.color = "red"
+  }
+
   window.requestAnimationFrame(() => updatePitch(analyserNode, sampleRate));
 }
 

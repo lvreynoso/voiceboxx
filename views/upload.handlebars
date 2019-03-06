@@ -1,0 +1,45 @@
+{{!-- upload.handlebars --}}
+
+<div class="col-xs-8">
+    <h1>Voiceboxx Test Upload</h1>
+    <form action="/test/upload" method="post" enctype="multipart/form-data">
+        <div>
+            <label for="data">Choose a media file:</label><br>
+            <input type="file" id="data" name="data">
+        </div>
+        <br>
+        <div>
+            <label for="slug">Slug</label><br>
+            <input type="text" id="category" name="slug" value="">
+        </div>
+        <br>
+        <div>
+            <label for="artist">Artist</label><br>
+            <input type="text" id="category" name="artist" value="">
+        </div>
+        <br>
+        <div>
+            <label for="title">Title</label><br>
+            <input type="text" id="category" name="title" value="">
+        </div>
+        <br>
+        <div>
+            <label for="lyrics">Lyrics</label><br>
+            <input type="text" id="category" name="lyrics" value="">
+        </div>
+        <br>
+        <div>
+            <label for="notes">Notes</label><br>
+            <input type="text" id="category" name="notes" value="">
+        </div>
+        <br>
+        <div>
+            <label for="tab">Tab</label><br>
+            <input type="text" id="category" name="tab" value="">
+        </div>
+        <br>
+        <div>
+            <button class="btn btn-primary" type="submit" name="button">Upload</button>
+        </div>
+    </form>
+</div>
