@@ -18,10 +18,10 @@ For the live version, click [here](http://voiceboxx.herokuapp.com).
 * [Built With](#built-with)
 
 ## Team
-* **[Stephanie Cherubin](https://github.com/StephanieCherubin)** - *Project Manager*
-* **[Lucia Reynoso](https://github.com/lvreynoso)** - *Gitmaster*
-* **[Henry Bowe](https://github.com/hleejr)** - *Lead Back End Lead Engineer*
-* **[Salvador Becerra](https://github.com/salvadb23)** - *Lead Front End Engineer*
+* **[Stephanie Cherubin](https://github.com/StephanieCherubin)** - *Project Manager/ UX Researcher*
+* **[Lucia Reynoso](https://github.com/lvreynoso)** - *Gitmaster/Lead Back End *
+* **[Henry Bowe](https://github.com/hleejr)** - *Back End Lead Engineer*
+* **[Salvador Becerra](https://github.com/salvadb23)** - *Lead Front End Engineer/ UI Engineer*
 
 ## License
 This project is licensed under the MIT License - see the [LICENSE](https://github.com/lvreynoso/voiceboxx/blob/master/LICENSE) file for details
@@ -32,7 +32,7 @@ This project is licensed under the MIT License - see the [LICENSE](https://githu
 ## Built With
 This project was built with the help of: 
 * [Pitchy](https://github.com/ianprime0509/pitchy) - Free and Open Source Software
-* [P5.js Sound Library](https://p5js.org/reference/#/libraries/p5.sound) - Javascript Sound Library
+* [VexFlow](http://www.vexflow.com/) - VexFlow is an open-source online music notation rendering API. It is written completely in JavaScript, and runs right in the browser. VexFlow supports HTML5 Canvas and SVG.
 
 ## Installing
 You would need [Node.js](https://nodejs.org) to install and run scripts.
