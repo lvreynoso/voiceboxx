@@ -5,6 +5,8 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.default = void 0;
 
+require("core-js/modules/es6.regexp.to-string");
+
 var _express = _interopRequireDefault(require("express"));
 
 var _song = _interopRequireDefault(require("../models/song.js"));
@@ -25,7 +27,8 @@ sing.get('/:artist/:song', async (req, res) => {
   const song = await _song.default.findOne(query).catch(err => {
     console.log(err);
   });
-  console.log(song);
+  song.audio = song.data.toString('base64');
+  delete song.data;
   res.render('sing', {
     song: song
   });

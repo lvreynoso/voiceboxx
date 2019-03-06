@@ -30,6 +30,9 @@ const SongSchema = new Schema({
   notes: {
     type: String
   },
+  tab: {
+    type: String
+  },
   data: Buffer
 });
 

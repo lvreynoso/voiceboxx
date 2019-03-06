@@ -7,9 +7,7 @@
     "test": "mocha --require @babel/polyfill --require @babel/register --exit",
     "clean": "rm -rf server && mkdir server && rm -rf ./public/dist && mkdir ./public/dist",
     "build-server": "babel -d ./server ./source -s",
-    "build-frontend": "babel -d ./public/dist ./public/src -s",
-    "browserify": "browserify ./public/dist/listener.js > ./public/scripts/listener.js",
-    "build": "npm run clean && npm run build-server && npm run build-frontend && npm run browserify",
+    "build": "npm run clean && npm run build-server",
     "start": "node ./server/server.js",
     "dev": "nodemon --exec babel-node -- ./source/server.js",
     "prepare": "pika-web --dest public/web_modules/"

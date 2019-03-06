@@ -25,7 +25,7 @@ _mongoose.default.connect(uri, {
 
 _mongoose.default.connection.on("error", console.error.bind(console, "MongoDB connection Error:"));
 
-_mongoose.default.set("debug", true);
+_mongoose.default.set("debug", false);
 
 var _default = _mongoose.default.connection;
 exports.default = _default;
